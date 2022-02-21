@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="i" class="com.model.Student" scope="singleton">
+<property name="sid" value="1"></property>
+<property name="sname" value="abc"></property>
+<property name="marks" value="80"></property>
+<property name="batch" ref="b"></property>
+</bean>
+<bean id="b" class="com.model.Batch" scope="prototype">
+<property name="bid" value="140"></property>
+<property name="bname" value="FD05"></property>
+<property name="faculty" ref="f"></property>
+</bean>
+<bean id="f" class="com.model.Faculty">
+<property name="fid" value="11"></property>
+<property name="fname" value="bhushan"></property>
+<property name="course" ref="c"></property>
+</bean>
+<bean id="c" class="com.model.Course">
+<property name="cid" value="1"></property>
+<property name="cname" value="java"></property>
+</bean>
+</beans>
